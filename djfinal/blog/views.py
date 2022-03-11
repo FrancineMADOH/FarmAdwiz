@@ -6,8 +6,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication 
 
 class PostsView(APIView):
-    permission_classes = [IsAuthenticated,]
-    Authentication_classes = [TokenAuthentication,]
+    permission_classes = [IsAuthenticated,  ]
+    Authentication_classes = [TokenAuthentication, ]
 
     def get(self,request):
         query = Posts.objects.all()
