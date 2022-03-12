@@ -8,7 +8,8 @@ main()=>runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (ctx)=>PostsState(),
+    return ChangeNotifierProvider(
+      create: (ctx) => PostsState(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

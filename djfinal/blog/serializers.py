@@ -13,7 +13,7 @@ class CommentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
         fields = "__all__"
-       # dphth = 1
+        depth = 1
 
 class ReponsesSerializer(serializers.ModelSerializer):
 
