@@ -7,8 +7,8 @@ from rest_framework.authentication import TokenAuthentication
 
 class PostsView(APIView):
     permission_classes = [IsAuthenticated,  ]
-    Authentication_classes = [TokenAuthentication, ]
-
+    authentication_classes = [TokenAuthentication, ]
+ 
     def get(self,request):
         query = Posts.objects.all()
         serializer = PostsSerializer(query, many=True)

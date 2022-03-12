@@ -23,7 +23,6 @@ class _HomeScreensState extends State<HomeScreens> {
     super.didChangeDependencies();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
