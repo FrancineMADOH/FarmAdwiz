@@ -8,7 +8,8 @@ class UserPostModel{
   final String? image;
   final String? comments;
   final String? likes;
-  final String? isOnline;
+  final bool? isOnline;
+  final String? tags;
 
-  UserPostModel({this.profileUrl, this.name, this.headline, this.isVideoPost, this.description, this.video, this.image, this.comments, this.likes, this.isOnline});
+  UserPostModel({this.profileUrl, this.name, this.headline, this.isVideoPost, this.description, this.video, this.image, this.comments, this.likes, this.isOnline, this.tags});
 }
