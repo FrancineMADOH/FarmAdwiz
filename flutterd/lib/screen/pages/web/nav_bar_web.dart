@@ -12,11 +12,13 @@ class _NavBarWebState extends State<NavBarWeb> {
 
   List<bool> _selectedButton =[true,false,false,false,false,false,false];
   List<bool> _hoverButton =[false,false,false,false,false,false,false];
+  bool _isShowUnderLine=false;
   @override
   Widget build(BuildContext context){
     return ResponsiveBuilder(
         builder: (BuildContext context, SizingInformation sizingInformation) {
         return Container(
+          padding: EdgeInsets.symmetric(horizontal: sizingInformation.localWidgetSize.width/13),
           decoration: BoxDecoration(
             color: primaryColor,
           ),
@@ -130,12 +132,13 @@ class _NavBarWebState extends State<NavBarWeb> {
                     ),
 
                     _profileIconWidget(),
+                   // _workIconWidget(),
                     SizedBox(width: 5,),
                     VerticalDivider(
                       color: Colors.white30,
                       thickness: 0.80,
                     ),
-
+                    _textWidget(),
                   ],
                 ),
               ),
@@ -202,29 +205,19 @@ class _NavBarWebState extends State<NavBarWeb> {
     );
   }
 
-  Widget _workIconWidget() {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: 3,),
-          Container(
-            height: 22,
-            width: 22,
-            decoration: BoxDecoration(
-            ),
-            child: ClipRRect(
-              child: Image.asset('assets/icons/dot_icon.png',color: Colors.white,),
-            ),
-          ),
-          Row(
-            children: [
-              Text("work",style: TextStyle(color: Colors.white),),
-              Icon(Icons.arrow_drop_down,color: Colors.white,),
-            ],
-          )
-
-        ],
+  Widget _textWidget() {
+    return InkWell(
+      onTap: (){},
+      onHover: (hover){
+        setState(() {
+          _isShowUnderLine=hover?true:false;
+        });
+      },
+      child: Container(
+        child: Text(" ",textAlign: TextAlign.center,style: TextStyle(
+            color: textColor,
+            decoration: _isShowUnderLine==false?TextDecoration.none:TextDecoration.underline
+        ),),
       ),
     );
   }
