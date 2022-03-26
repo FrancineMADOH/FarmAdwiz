@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterd/screen/pages/mobile/widget/common.dart';
+import 'package:flutterd/screen/pages/mobile/widget/custom_appBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -29,7 +30,7 @@ class MobileScreen extends StatelessWidget {
             ),
             body: Column(
               children: [
-                Text("Mobile"),
+                CustomAppBar(sizingInformation: sizingInformation,),
               ],
             ),
           );
