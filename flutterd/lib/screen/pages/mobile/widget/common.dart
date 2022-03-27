@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterd/screen/widgets/style/theme.dart';
 
 class SingleNavBarButton extends StatelessWidget {
   final IconData icon;
@@ -15,9 +16,9 @@ class SingleNavBarButton extends StatelessWidget {
         Container(
           height: 28,
           width: 28,
-          child: Icon(icon),
+          child: Icon(icon,color: selectedButton?blueColor:Colors.black87,),
         ),
-        Text(name,style: TextStyle(fontSize: 14),)
+        Text(name,style: TextStyle(fontSize: 14,color: selectedButton?blueColor:Colors.black87,)),
       ],
     );
   }

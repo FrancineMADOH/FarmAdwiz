@@ -12,29 +12,55 @@ Widget build(BuildContext context) {
     return Container(
       color: blueColor,
       height: sizingInformation.screenSize.height * 0.10,
-      padding: EdgeInsets.only(top: 20,left: 10, right: 10),
+      padding: EdgeInsets.only(top: 20,left: 15, right: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            height: 30,
-            width: 30,
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                child:Image.asset("assets/1.png")) ,
+          Stack(
+            children:[
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white,width: 2),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      child:Image.asset("assets/1.png")) ,
+                ),
+              ),
+              Positioned(
+                bottom: 5,
+                right: 0,
+                child: Container(
+                  width: 17,
+                  height: 17,
+                  decoration: BoxDecoration(
+                    color:Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  child: Icon(Icons.menu,color:blueColor,size: 14,),
+                ),
+              )
+            ],
           ),
+
           Container(
             height: 35,
-            width: sizingInformation.screenSize.width/1.50,
+            width: sizingInformation.screenSize.width/1.40,
             decoration: BoxDecoration(
-              color: Colors.white30,
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              color: Colors.white70,
             ),
             child: TextField(
               decoration: InputDecoration(
                 hintText: "Search",
                 border: InputBorder.none,
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: Icon(Icons.qr_code),
+                prefixIcon: Icon(Icons.search,color:Colors.black87),
+                suffixIcon: Icon(Icons.qr_code,color:Colors.black87),
               ),
             ),
           ),
