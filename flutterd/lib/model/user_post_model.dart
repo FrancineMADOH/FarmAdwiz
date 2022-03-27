@@ -1,15 +1,15 @@
 class UserPostModel{
-  final String? profileUrl;
-  final String? name;
-  final String? headline;
+  final String profileUrl;
+  final String name;
+  final String headline;
   final bool? isVideoPost;
-  final String? description;
+  final String description;
   final String? video;
-  final String? image;
-  final String? comments;
-  final String? likes;
+  final String image;
+  final String comments;
+  final String likes;
   final bool? isOnline;
-  final String? tags;
+  final String tags;
 
-  UserPostModel({this.profileUrl, this.name, this.headline, this.isVideoPost, this.description, this.video, this.image, this.comments, this.likes, this.isOnline, this.tags});
+  UserPostModel({required this.profileUrl, required this.name, required this.headline, this.isVideoPost, required this.description, this.video, required this.image, required this.comments, required this.likes, this.isOnline, required this.tags});
 }

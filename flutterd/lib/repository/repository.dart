@@ -7,7 +7,7 @@ class FakeRepository{
   static final List<UserPostModel> postList = [
     UserPostModel(
       name: "seraph",
-      profileUrl: "assets/icons/1.png",
+      profileUrl: "assets/1.png",
       headline: "CIO",
       tags: "jdjdjdjdjdjdjdj",
       description: "nknkjfdijfkdjj",
@@ -15,7 +15,7 @@ class FakeRepository{
       comments: " 100",
       video: "",
       isOnline: false,
-      image: "assets/icons/1.png",
+      image: "assets/1.png",
       likes: "900M"
 
     ),
@@ -29,12 +29,12 @@ class FakeRepository{
         comments: " 100",
         video: "",
         isOnline: false,
-        image: "assets/icons/1.png",
+        image: "assets/1.png",
         likes: "200k"
     ),
     UserPostModel(
         name: "francine",
-        profileUrl: "assets/icons/1.png",
+        profileUrl: "assets/1.png",
         headline: "CIO",
         tags: "jdjdjdjdjdjdjdj",
         description: "nknkjfdijfkdjj",
@@ -42,7 +42,7 @@ class FakeRepository{
         comments: " 100",
         video: "",
         isOnline: false,
-        image: "assets/icons/1.png",
+        image: "assets/1.png",
         likes: "800k"
 
     )
@@ -79,12 +79,12 @@ class FakeRepository{
     CompanyModel(
       name: "semence",
       description: "semencier ",
-      profileUrl: "assets/icons/1.png",
+      profileUrl: "assets/1.png",
     ),
     CompanyModel(
       name: "agro",
       description: "produit agricol",
-      profileUrl: "assets/icons/1.png",
+      profileUrl: "assets/1.png",
     ),
   ];
 }
