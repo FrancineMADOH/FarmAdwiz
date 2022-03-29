@@ -13,5 +13,5 @@ class CenterWidget extends StatelessWidget{
       height: 500,
       color: Colors.blueGrey,
     );
-  }
+  } 
 }
