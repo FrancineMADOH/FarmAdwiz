@@ -4,7 +4,8 @@ import 'package:responsive_builder/responsive_builder.dart';
 class LeftSideWidget extends StatelessWidget {
   final SizingInformation sizingInformation;
 
-  const LeftSideWidget({Key? key, required this.sizingInformation}) : super(key: key);
+  const LeftSideWidget({Key? key, required this.sizingInformation})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,29 +19,22 @@ class LeftSideWidget extends StatelessWidget {
       ),
     );
   }
+
   Widget _headerWidget() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
+      decoration: BoxDecoration(color: Colors.white, boxShadow: [
+        BoxShadow(
             color: Colors.black.withOpacity(.2),
             blurRadius: 1,
             spreadRadius: 1,
-            offset: Offset(0.5,0.5)
-          )
-        ]
-      ),
-
-
+            offset: Offset(0.5, 0.5))
+      ]),
       child: Stack(
         children: [
           Container(
             height: 65,
-            decoration: BoxDecoration(
-              color:Colors.red
-            ),
+            decoration: BoxDecoration(color: Colors.red),
             child: Image.asset('assets/profile.jpg'),
           ),
           Align(
@@ -52,7 +46,7 @@ class LeftSideWidget extends StatelessWidget {
             ),
           ),
         ],
-      ) ,
+      ),
     );
   }
 }

@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication 
 
 class PostsView(APIView):
-    permission_classes = [IsAuthenticated,  ]
+    permission_classes = [IsAuthenticated,  ] 
     authentication_classes = [TokenAuthentication, ]
  
     def get(self,request):
