@@ -217,7 +217,7 @@ class _MobileScreenState extends State<MobileScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  posts[index].titre,
+                                  _post[index].name,
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
@@ -227,7 +227,7 @@ class _MobileScreenState extends State<MobileScreen> {
                                   width:
                                       sizingInformation.screenSize.width / 1.24,
                                   child: Text(
-                                    posts[index].titre,
+                                    _post[index].headline,
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.black54,
@@ -245,11 +245,11 @@ class _MobileScreenState extends State<MobileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _post[index].description,
+                            posts[index].titre,
                             style: TextStyle(fontSize: 14),
                           ),
                           Text(
-                            _post[index].tags,
+                            posts[index].description,
                             style: TextStyle(color: blueColor),
                           ),
                           SizedBox(
