@@ -10,7 +10,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutterd/urls.dart';
 
 class MobileScreen extends StatefulWidget {
   @override

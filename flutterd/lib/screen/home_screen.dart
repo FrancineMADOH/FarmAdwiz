@@ -9,10 +9,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (BuildContext context, SizingInformation sizingInformation) {
-        if(sizingInformation.isDesktop){
+        if (sizingInformation.isDesktop) {
           return WebScreen();
         }
-        if(sizingInformation.isTablet){
+        if (sizingInformation.isTablet) {
           return TabletScreen();
         }
         return MobileScreen();
