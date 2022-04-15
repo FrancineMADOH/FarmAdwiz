@@ -39,11 +39,11 @@ class Reponses(models.Model):
     comment = models.ForeignKey(Comments,on_delete=models.CASCADE)
     titre = models.TextField()
     time = models.DateField(auto_now_add=True)
-    #image = models.ImageField(default='avatar.jpg', upload_to ='profile_Images')
-    #videos = models.FileField(upload_to='videos/', null=True, verbose_name="")
+    image = models.ImageField(default='avatar.jpg', upload_to ='profile_Images')
+    videos = models.FileField(upload_to='videos/', null=True, verbose_name="")
 
     def __str__(self):
-        return f"User={self.user.username}||comment={self.comment}"
+        return f"User={self.user.username}||comment={self.comm0ent}"
 
 
 class Likes(models.Model):

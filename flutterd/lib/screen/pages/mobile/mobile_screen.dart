@@ -1,15 +1,18 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+
+import 'package:flutterd/model/user_post_model.dart';
 import 'package:flutterd/model/user_post_model.dart';
 import 'package:flutterd/repository/repository.dart';
 import 'package:flutterd/screen/pages/mobile/widget/common.dart';
 import 'package:flutterd/screen/pages/mobile/widget/custom_appBar.dart';
 import 'package:flutterd/screen/widgets/style/theme.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:http/http.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:http/http.dart' as http;
 
 class MobileScreen extends StatefulWidget {
   @override
@@ -19,7 +22,7 @@ class MobileScreen extends StatefulWidget {
 class _MobileScreenState extends State<MobileScreen> {
   Client client = http.Client();
   List<Post> posts = [];
-
+  List<Comment> commentss = [];
   int _currentNavIndex = 0;
   final _post = FakeRepository.postList;
   bool _showAppNavBar = true;
@@ -74,6 +77,10 @@ class _MobileScreenState extends State<MobileScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
+  bool _showComments = false;
+
+  var i;
 
   @override
   Widget build(BuildContext context) {
@@ -302,6 +309,30 @@ class _MobileScreenState extends State<MobileScreen> {
                         ],
                       ),
                     ),
+                    if (_showComments)
+                      Column(
+                        children: [
+                          Container(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "Comment...",
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Card(
+                              child: Column(
+                                children: [
+                                  Text(posts[index]
+                                      .comment![1]
+                                      .titre
+                                      .toString()),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                   ],
                 ));
           },
@@ -327,66 +358,34 @@ class _MobileScreenState extends State<MobileScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset('assets/icons/like_icon_white.png'),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "Likes",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                )
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset('assets/icons/comment_icon.png'),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "Comments",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset('assets/icons/share_icon.png'),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "share",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                  ),
-                )
-              ],
-            ),
-          ),
+          FlatButton.icon(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite,
+                color: Theme.of(context).focusColor,
+              ),
+              label: Text(
+                "Like",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              )),
+          FlatButton.icon(
+              onPressed: () {
+                setState(() {
+                  _showComments = !_showComments;
+                });
+              },
+              icon: Icon(Icons.comment),
+              label: Text(
+                "Comment",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              )),
+          FlatButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.share),
+              label: Text(
+                "Share",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              )),
         ],
       ),
     );
