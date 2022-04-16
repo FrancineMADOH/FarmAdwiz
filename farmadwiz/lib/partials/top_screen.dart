@@ -1,4 +1,3 @@
-import 'package:farmadwiz/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TopScreen extends StatelessWidget {
@@ -7,7 +6,7 @@ class TopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 350,
+        height: 250,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(100),
@@ -21,7 +20,8 @@ class TopScreen extends StatelessWidget {
             alignment: Alignment.center,
             child: Image.asset(
               'assets/images/logo.jpg',
-              width: 300,
+              width: 200,
+              height: 200,
               fit: BoxFit.fill,
             ),
           )
